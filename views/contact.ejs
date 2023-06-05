@@ -1,0 +1,53 @@
+<!-- Jason McAuslan -->
+<!-- 301279046 -->
+<!-- June 4th, 2023 -->
+<!-- contact.ejs -->
+
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+<%- include partials/page_banner.ejs %>
+
+  <!-- Contact Me Page Content -->
+<div class="container">
+    <div class="container">
+        <h3>My Contact Info</h3>
+        <ul>
+            <li>Name: Jason McAuslan</li>
+            <li>Phone Number: 519-331-8525</li>
+            <li>Email Address: Jaymac_1406@hotmail.com</li>
+        </ul>
+    </div>
+    <form onsubmit="return false">
+        <fieldset>
+            <legend>Contact Info</legend>
+            <label for="fname">First Name:</label>
+            <input name="fname" type="text" id="fname">
+            <label for="lname">Last Name:</label>
+            <input name="lname" type="text" id="lname">
+            <br><br>
+            <label for="phonenum">Phone Number:</label>
+            <input name="phonenum" type="text" id="phonenum">
+            <label for="email">Email Address:</label>
+            <input name="email" type="text" id="email">
+            <br><br>
+            <textarea name="message" rows="10" cols="30">Enter a message for me here.</textarea>
+            <br><br>
+            <input type="submit" onclick="contactFunction()" onsubmit="return false" value="Submit">
+        </fieldset>
+    </form>
+</div>
+
+<script>
+function contactFunction() {
+    window.alert("This functionality has not been added yet.");
+    let homeURL = window.location.href;
+    let finalSlash = homeURL.lastIndexOf('/');
+    homeURL = homeURL.slice(0, finalSlash);
+    window.location.assign(homeURL);
+}</script>
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>
