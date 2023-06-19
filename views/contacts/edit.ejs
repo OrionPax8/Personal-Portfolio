@@ -1,0 +1,66 @@
+<!-- Jason McAuslan -->
+<!-- 301279046 -->
+<!-- June 18th, 2023 -->
+<!-- edit.ejs -->
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<%- include ../partials/page_banner.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Contact Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Contact Name"
+                    name="name" 
+                    value="<%= contact.name %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="developerTextField">Contact Number</label>
+                    <input type="text" class="form-control"
+                    id="developerTextField"
+                    placeholder="Enter the Contact Phone Number"
+                    name="developer"
+                    value="<%= contact.number %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="releasedTextField">Email Address</label>
+                    <input type="text" class="form-control"
+                    id="releasedTextField"
+                    placeholder="Enter the Contact Email Address"
+                    name="released"
+                    value="<%= contact.email %>"
+                    required>
+                </div>
+
+
+                <br>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                <a href="/contact-list/delete/<%= contact._id %>" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Delete</a>
+
+                <a href="/contact-list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>

@@ -1,38 +1,43 @@
 /*!-- Jason McAuslan -->
 <!-- 301279046 -->
-<!-- June 4th, 2023 -->
+<!-- June 18th, 2023 -->
 <!-- index.js -->
 */
 let express = require('express');
 let router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home'});
-});
+let indexController = require('../controllers/index')
 
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home'});
-});
+/* GET home page. */
+router.get('/', indexController.displayHomePage);
+
+router.get('/home', indexController.displayHomePage);
 
 /* GET about us page. */
-router.get('/about', function(req, res, next) {
-  res.render('about_me', { title: 'About'});
-});
+router.get('/about', indexController.displayAboutPage);
 
-/* GET products page. */
-router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects'});
-});
+/* GET projects page. */
+router.get('/projects', indexController.displayProjectsPage);
 
 /* GET services page. */
-router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Services'});
-});
+router.get('/services', indexController.displayServicesPage);
 
 /* GET contact page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact Me'});
-});
+router.get('/contact', indexController.displayContactPage);
+
+/* GET Route for displaying the login page. */
+router.get('/login', indexController.displayLoginPage);
+
+/* POST Route for processing the login page. */
+router.post('/login', indexController.processLoginPage);
+
+/* GET Route for displaying the register page. */
+router.get('/register', indexController.displayRegisterPage);
+
+/* POST Route for processing the register page. */
+router.post('/register', indexController.processRegisterPage);
+
+/* GET to perform logout */
+router.get('/logout', indexController.performLogout);
 
 module.exports = router;
